@@ -57,8 +57,7 @@ This readlist is structured to match the syllabus **tier-by-tier**.
    [https://arxiv.org/abs/1609.04836](https://arxiv.org/abs/1609.04836)
 
 5. **Andrej Karpathy — Neural Nets: 20 Years**
-   [https://karpathy.github.io/2022/12/12/nn-explainer/](https://karpathy.github.io/2022/12/12/nn-explainer/)
-   TODO
+   [https://karpathy.github.io/2022/03/14/lecun1989/](https://karpathy.github.io/2022/03/14/lecun1989/)
 
 ---
 

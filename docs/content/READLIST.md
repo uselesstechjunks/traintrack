@@ -4,6 +4,16 @@
 
 ### Primary sources (read all)
 
+**RLHF Book (Nathan Lambert)**
+[https://rlhfbook.com/](https://rlhfbook.com/)
+
+Why: Complete practitioner-oriented synthesis of RLHF, preference learning, and post-training; ties objectives, datasets, infra, and evaluation together.
+
+**Hugging Face TRL Documentation (RLHF & DPO)**
+[https://huggingface.co/docs/trl/main/en/index](https://huggingface.co/docs/trl/main/en/index)
+
+Why: Code-adjacent view of modern post-training pipelines; shows how ideas become systems.
+
 **Hugging Face RLHF Book**
 [https://huggingface.co/docs/trl/main/en/rlhf](https://huggingface.co/docs/trl/main/en/rlhf)
 
@@ -43,6 +53,16 @@ Why: Extremely clean conceptual grounding. Read once, revisit often.
 ## 2. Training Dynamics & Optimization at Scale
 
 ### Core reading
+
+**Scaling Laws for Neural Language Models (Kaplan et al.)**
+[https://arxiv.org/abs/2001.08361](https://arxiv.org/abs/2001.08361)
+
+Why: Understand what truly scales (and what does not) to guide training strategy.
+
+**Chinchilla Scaling Laws (Hoffmann et al.)**
+[https://arxiv.org/abs/2203.15556](https://arxiv.org/abs/2203.15556)
+
+Why: Data vs compute tradeoffs that directly influence training budget decisions.
 
 **Andrej Karpathy – Deep Neural Nets: 20 Years**
 [https://karpathy.github.io/2022/12/12/nn-explainer/](https://karpathy.github.io/2022/12/12/nn-explainer/)
@@ -212,6 +232,25 @@ Why: Helps you map papers to knobs you can actually turn.
 [https://ai.facebook.com/blog/the-importance-of-experimentation-in-ml-research/](https://ai.facebook.com/blog/the-importance-of-experimentation-in-ml-research/)
 
 Why: Emphasizes experimentation over novelty.
+
+---
+
+# Frontier / Ongoing Discourse (Optional, high-ceiling)
+
+**Alignment Forum – RLHF / Preference Learning**
+[https://www.alignmentforum.org/](https://www.alignmentforum.org/)
+
+Why: Many cutting-edge RLHF discussions appear here first.
+
+**LessWrong – LLM Training & Alignment**
+[https://www.lesswrong.com/tag/large-language-models](https://www.lesswrong.com/tag/large-language-models)
+
+Why: Useful for stress-testing ideas (read skeptically).
+
+**r/MachineLearning (selected threads)**
+[https://www.reddit.com/r/MachineLearning/](https://www.reddit.com/r/MachineLearning/)
+
+Why: Occasional high-quality postmortems and paper discussions; filter out noise.
 
 ---
 

@@ -75,13 +75,19 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 
 #### Must-read
 
-1. **OpenAI — Evaluating Language Models**
-   [https://openai.com/research/evaluating-language-models](https://openai.com/research/evaluating-language-models)
+1. **OpenAI Evals (framework and docs)**
+   [https://cookbook.openai.com/examples/evaluation/getting_started_with_openai_evals](https://cookbook.openai.com/examples/evaluation/getting_started_with_openai_evals)
 
-2. **Holistic Evaluation of Language Models**
+2. **Process for Adapting Language Models to Society (PALMS)**
+   [https://cdn.openai.com/palms.pdf](https://cdn.openai.com/palms.pdf)​
+
+3. **Measuring short-form factuality in large language models (SimpleQA)**
+   [https://cdn.openai.com/papers/simpleqa.pdf](https://cdn.openai.com/papers/simpleqa.pdf)​
+
+4. **Holistic Evaluation of Language Models**
    [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
 
-3. **Google — Beyond Accuracy**
+5. **Google — Beyond Accuracy**
    [https://arxiv.org/abs/2506.04723](https://arxiv.org/abs/2506.04723)
 
 ---

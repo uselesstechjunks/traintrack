@@ -99,7 +99,7 @@ This readlist is structured to match the syllabus **tier-by-tier**.
    Why: Slicing, robustness, and behavioral testing.
 
 3. **Google — Beyond Accuracy**
-   [https://research.google/blog/beyond-accuracy-behavioral-testing-of-nlp-models/](https://research.google/blog/beyond-accuracy-behavioral-testing-of-nlp-models/)
+   [https://arxiv.org/abs/2506.04723](https://arxiv.org/abs/2506.04723)
    Why: How strong teams reason about failures.
 
 ---

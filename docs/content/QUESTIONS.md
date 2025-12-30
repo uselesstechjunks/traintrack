@@ -218,7 +218,7 @@ This prevents wasted time.
 
 ---
 
-## 9. Objective–Behavior Coupling & Emergent Effects
+# 9. Objective–Behavior Coupling & Emergent Effects
 
 ### Foundational questions
 
@@ -242,7 +242,7 @@ This prevents wasted time.
 
 ---
 
-## 10. Continual and Iterative Training Regimes
+# 10. Continual and Iterative Training Regimes
 
 ### Foundational questions
 
@@ -265,7 +265,7 @@ This prevents wasted time.
 
 ---
 
-## 11. Causal Reasoning in Model Improvements
+# 11. Causal Reasoning in Model Improvements
 
 ### Foundational questions
 
@@ -288,7 +288,7 @@ This prevents wasted time.
 
 ---
 
-## 12. Human-in-the-Loop Dynamics Beyond Preference Data
+# 12. Human-in-the-Loop Dynamics Beyond Preference Data
 
 ### Foundational questions
 
@@ -311,7 +311,7 @@ This prevents wasted time.
 
 ---
 
-## 13. Model Degradation, Drift, and Silent Failures
+# 13. Model Degradation, Drift, and Silent Failures
 
 ### Foundational questions
 
@@ -334,13 +334,88 @@ This prevents wasted time.
 
 ---
 
-# How to Use These Questions (Important)
+# Tier 5 — Scaling, Architecture, and Decision-Making
 
-For each reading section:
+## 14. Architectural Inductive Biases at Scale
 
-* Pick **3–5 questions**
-* Try to answer them *before* reading
-* Refine answers after reading
-* Write answers as if explaining to a teammate
+### Foundational questions
 
-If you can do this comfortably, you are at **working-researcher level**, not “student” level.
+* Why do transformer inductive biases work so well for language?
+* What limitations are architectural rather than optimization-related?
+* When does post-training stop compensating for architectural choices?
+
+### Deep understanding
+
+* How do attention mechanisms bias long-context behavior?
+* Why do some failure modes persist across objectives and data?
+* When does scaling data/compute fail to overcome architectural limits?
+
+### Interview / real-world questions
+
+* A model plateaus despite more data and tuning. What do you suspect?
+* How would you tell whether the problem is architecture vs training?
+* When would you justify an architectural change instead of more tuning?
+
+---
+
+## 15. Safety–Capability Tradeoffs (Beyond RLHF Mechanics)
+
+### Foundational questions
+
+* Why does alignment often reduce raw capability?
+* What does “over-alignment” mean in practice?
+* Why are refusal behaviors hard to calibrate?
+
+### Deep understanding
+
+* How do safety objectives distort representations?
+* Why do harmlessness constraints generalize poorly?
+* How do you reason about acceptable capability loss?
+
+### Interview / real-world questions
+
+* A safer model is noticeably less useful. What do you do?
+* How would you measure “helpful but safe”?
+* When is it correct to ship a less capable model?
+
+---
+
+## 16. Compute Budgeting & Experiment Prioritization
+
+### Foundational questions
+
+* Why is compute the scarcest resource in modern ML?
+* What makes an experiment “too expensive to justify”?
+
+### Deep understanding
+
+* How do scaling laws inform experiment sizing?
+* When should you downscale experiments vs not run them?
+* How do you trade off iteration speed vs final quality?
+
+### Interview / real-world questions
+
+* You have budget for one large run or five small ones. What do you choose?
+* How do you decide whether to continue a partially successful run?
+* How do you justify compute spend to stakeholders?
+
+---
+
+## 17. Owning Model Quality End-to-End
+
+### Foundational questions
+
+* What does it mean to “own” model quality?
+* Why is quality not a single metric?
+
+### Deep understanding
+
+* How do you balance short-term gains vs long-term health?
+* How do you communicate uncertainty and risk?
+* When do you push back on shipping pressure?
+
+### Interview / real-world questions
+
+* Product wants to ship despite known weaknesses. What do you say?
+* How do you decide when a model is “good enough”?
+* How do you document model limitations responsibly?

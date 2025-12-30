@@ -1,3 +1,5 @@
+# Questions — Training-Focused Roles
+
 This is the right move. If you internalize the **right questions**, the reading becomes targeted, and interviews start to feel familiar rather than adversarial.
 
 Below is a **question-first syllabus**, aligned exactly to:
@@ -213,6 +215,122 @@ This prevents wasted time.
 * How would you test whether this paper’s idea applies here?
 * What would you change before trying this at scale?
 * Why might this approach fail in production?
+
+---
+
+## 9. Objective–Behavior Coupling & Emergent Effects
+
+### Foundational questions
+
+* Why does optimizing a seemingly reasonable objective often produce unexpected behavior?
+* What does it mean for a model to “game” an objective?
+* Why do small loss changes sometimes lead to large qualitative behavior shifts?
+
+### Deep understanding
+
+* How do proxy objectives diverge from intended behavior?
+* Why does reward shaping amplify certain behaviors disproportionately?
+* How does distribution shift interact with objective exploitation?
+* Why do alignment interventions sometimes reduce core capabilities?
+
+### Interview / real-world questions
+
+* A model improves reward but becomes less useful. Why?
+* How would you detect objective gaming before deployment?
+* How do you design objectives that are harder to exploit?
+* When do you accept objective misalignment instead of fixing it?
+
+---
+
+## 10. Continual and Iterative Training Regimes
+
+### Foundational questions
+
+* Why does repeated fine-tuning cause forgetting?
+* What is the difference between catastrophic forgetting and slow drift?
+* Why does “just one more round of tuning” often backfire?
+
+### Deep understanding
+
+* How does gradient interference accumulate across iterations?
+* How do data and objective choices compound over time?
+* What does stability mean across *multiple* training cycles?
+
+### Interview / real-world questions
+
+* A model regresses after several post-training iterations. What do you suspect?
+* How do you design evaluations to catch long-term degradation?
+* When do you restart from base vs continue training?
+* How do you reason about training debt?
+
+---
+
+## 11. Causal Reasoning in Model Improvements
+
+### Foundational questions
+
+* Why are most observed improvements correlational rather than causal?
+* What confounders exist in large-scale training experiments?
+* Why does ablation often give misleading confidence?
+
+### Deep understanding
+
+* How do you isolate the effect of a single training change?
+* When is randomization insufficient?
+* How do interactions between knobs break naïve causal reasoning?
+
+### Interview / real-world questions
+
+* You changed data, objective, and LR together and saw gains. What now?
+* How would you prove that an intervention actually caused improvement?
+* How do you decide what *not* to attribute causality to?
+* What level of causal confidence is “enough” to ship?
+
+---
+
+## 12. Human-in-the-Loop Dynamics Beyond Preference Data
+
+### Foundational questions
+
+* Why do humans distort training signals over time?
+* What incentives do annotators optimize implicitly?
+* Why does preference data quality decay?
+
+### Deep understanding
+
+* How does annotator fatigue bias training?
+* How do changing guidelines affect consistency?
+* Why does adaptive data collection amplify biases?
+
+### Interview / real-world questions
+
+* Preference data quality dropped. What do you check first?
+* How would you redesign the annotation process?
+* When should humans be removed from the loop?
+* How do you prevent feedback loops between model and annotators?
+
+---
+
+## 13. Model Degradation, Drift, and Silent Failures
+
+### Foundational questions
+
+* Why do models degrade even without code changes?
+* What is the difference between metric drift and behavioral drift?
+* Why are rare failures the hardest to track?
+
+### Deep understanding
+
+* How does evaluation drift occur?
+* Why do offline metrics lose correlation with real behavior over time?
+* What signals indicate silent degradation?
+
+### Interview / real-world questions
+
+* A model passes all tests but users complain. What do you do?
+* How do you monitor long-term robustness?
+* What regressions are hardest to catch?
+* When do you roll back vs iterate?
 
 ---
 

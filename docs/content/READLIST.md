@@ -254,6 +254,108 @@ Why: Occasional high-quality postmortems and paper discussions; filter out noise
 
 ---
 
+# READLIST — Tier 4: Failure, Drift, and Emergent Behavior
+
+## A. Targeted Readings (Conceptual + Practitioner)
+
+These are **surgical** additions. Do not add many more.
+
+### Objective Misalignment & Emergent Behavior
+
+**Reward Is Not the Optimization Objective**
+[https://www.lesswrong.com/posts/bmfnzqTjQ9H6k8YyZ/reward-is-not-the-optimization-objective](https://www.lesswrong.com/posts/bmfnzqTjQ9H6k8YyZ/reward-is-not-the-optimization-objective)
+Why: Canonical explanation of why proxy objectives break. Essential mental model.
+
+**Specification Gaming Examples (DeepMind)**
+[https://deepmind.google/discover/blog/specification-gaming-the-flawed-way-to-design-ai/](https://deepmind.google/discover/blog/specification-gaming-the-flawed-way-to-design-ai/)
+Why: Concrete examples of objective exploitation.
+
+**OpenAI – Faulty Reward Functions**
+[https://openai.com/research/faulty-reward-functions](https://openai.com/research/faulty-reward-functions)
+Why: Real-world failures from misaligned rewards.
+
+---
+
+### Continual Training & Forgetting
+
+**On Catastrophic Forgetting**
+[https://arxiv.org/abs/1612.00796](https://arxiv.org/abs/1612.00796)
+Why: Foundational paper; concepts apply directly to iterative LLM post-training.
+
+**Anthropic – Model Editing and Fine-Tuning Risks**
+[https://www.anthropic.com/research/risks-from-learned-optimization](https://www.anthropic.com/research/risks-from-learned-optimization)
+Why: Shows how repeated interventions can create hidden risks.
+
+---
+
+### Causal Reasoning in ML Experiments
+
+**The Problem with A/B Testing ML Systems**
+[https://research.google/pubs/pub46753/](https://research.google/pubs/pub46753/)
+Why: Highlights confounders and false conclusions in ML experiments.
+
+**Causal Confusion in Machine Learning**
+[https://arxiv.org/abs/1806.09305](https://arxiv.org/abs/1806.09305)
+Why: Clear articulation of why ML improvements are hard to attribute.
+
+---
+
+### Human-in-the-Loop Pathologies
+
+**The Social Biases of RLHF**
+[https://arxiv.org/abs/2303.17548](https://arxiv.org/abs/2303.17548)
+Why: How human preferences distort model behavior.
+
+**OpenAI – Challenges in Data Annotation**
+[https://openai.com/research/challenges-in-data-annotation](https://openai.com/research/challenges-in-data-annotation)
+Why: Practical annotation failure modes.
+
+---
+
+### Drift & Long-Term Degradation
+
+**Why Models Fail After Deployment**
+[https://arxiv.org/abs/2302.00942](https://arxiv.org/abs/2302.00942)
+Why: Realistic view of post-deployment degradation.
+
+**Evaluation Is Broken**
+[https://www.alignmentforum.org/posts/9iA6WZp4bKc9bZ8F8/evaluation-is-broken](https://www.alignmentforum.org/posts/9iA6WZp4bKc9bZ8F8/evaluation-is-broken)
+Why: Why metrics silently lose meaning over time.
+
+---
+
+## B. Case Studies & Post-Mortems (Read Slowly)
+
+These are **gold**. Read for reasoning, not conclusions.
+
+### Real Failures
+
+**Microsoft Tay Chatbot Postmortem**
+[https://www.microsoft.com/en-us/research/blog/learning-from-tay/](https://www.microsoft.com/en-us/research/blog/learning-from-tay/)
+Why: Classic human-feedback failure.
+
+**OpenAI GPT-4 System Card**
+[https://cdn.openai.com/papers/gpt-4-system-card.pdf](https://cdn.openai.com/papers/gpt-4-system-card.pdf)
+Why: Concrete discussion of risks, mitigations, and tradeoffs.
+
+**Anthropic – Claude Safety Iterations**
+[https://www.anthropic.com/research/constitutional-ai](https://www.anthropic.com/research/constitutional-ai)
+Why: Iterative post-training tradeoffs and failure mitigation.
+
+---
+
+### Emergent Behavior & Drift
+
+**InstructGPT Failure Modes**
+[https://openai.com/research/instruction-following](https://openai.com/research/instruction-following)
+Why: Shows how instruction tuning reshapes behavior.
+
+**Alignment Forum – Emergent Misalignment Threads**
+[https://www.alignmentforum.org/tag/emergent-behavior](https://www.alignmentforum.org/tag/emergent-behavior)
+Why: Frontier discussions on unexpected behavior.
+
+---
+
 # What You Can Safely Skip for Now
 
 * General MLOps books

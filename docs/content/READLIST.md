@@ -12,27 +12,21 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 
 1. **RLHF Book — Nathan Lambert**
    [https://rlhfbook.com/](https://rlhfbook.com/)
-   Why: Best end-to-end practitioner synthesis of RLHF, preference learning, post-training pipelines, infra, and evaluation.
 
 2. **Hugging Face TRL Documentation**
    [https://huggingface.co/docs/trl/main/en/index](https://huggingface.co/docs/trl/main/en/index)
-   Why: Code-adjacent view of modern post-training systems; bridges research and production.
 
 3. **Hugging Face RLHF Guide**
    [https://huggingface.co/learn/deep-rl-course/en/unitbonus3/rlhf](https://huggingface.co/learn/deep-rl-course/en/unitbonus3/rlhf)
-   Why: Practical, realistic overview of RLHF variants and pitfalls.
 
 5. **Direct Preference Optimization (DPO)**
    [https://arxiv.org/abs/2305.18290](https://arxiv.org/abs/2305.18290)
-   Why: Understand the objective, assumptions, and instability regimes.
 
 6. **Group Relative Policy Optimization (GRPO)**
    [https://arxiv.org/abs/2402.03300](https://arxiv.org/abs/2402.03300)
-   Why: Increasingly used in real systems; understand why grouping stabilizes learning.
 
 7. **OpenAI — Learning from Human Preferences**
    [https://openai.com/research/learning-from-human-preferences](https://openai.com/research/learning-from-human-preferences)
-   Why: Foundational intuition for preference-based learning.
 
 ---
 

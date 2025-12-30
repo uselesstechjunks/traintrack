@@ -1,6 +1,6 @@
 # TrainTrack
 
-Short notes site that organizes preparation for a large-scale model training role (research engineer / scientist focused on training, objectives, data, and evaluation rather than product shipping).
+Short notes site that organizes preparation for a large-scale model training role (research engineer / scientist focused on training, objectives, data, and evaluation rather than product shipping). It is an imperfect guide aimed at senior-level research engineering roles centered on training large models at scale.
 
 ## What this covers
 - Ideal roles: research engineer/scientist (LLMs/foundation models), sometimes applied scientist or senior ML engineer if the focus is on training.

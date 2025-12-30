@@ -54,23 +54,19 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 
 1. **Scaling Laws for Neural Language Models**
    [https://arxiv.org/abs/2001.08361](https://arxiv.org/abs/2001.08361)
-   Why: What actually scales, and what does not.
 
 2. **Chinchilla Scaling Laws**
    [https://arxiv.org/abs/2203.15556](https://arxiv.org/abs/2203.15556)
-   Why: Data vs compute tradeoffs that affect strategy.
 
 3. **Gradient Noise Scale**
    [https://arxiv.org/abs/1812.06162](https://arxiv.org/abs/1812.06162)
-   Why: Batch size, learning rate, and convergence intuition.
 
 4. **On Large-Batch Training**
    [https://arxiv.org/abs/1609.04836](https://arxiv.org/abs/1609.04836)
-   Why: Why large batches fail — and when they do not.
 
 5. **Andrej Karpathy — Neural Nets: 20 Years**
    [https://karpathy.github.io/2022/12/12/nn-explainer/](https://karpathy.github.io/2022/12/12/nn-explainer/)
-   Why: High-level intuition that still applies at scale.
+   TODO
 
 ---
 
@@ -78,11 +74,9 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 
 1. **OpenAI — Scaling Laws Blog**
    [https://openai.com/research/scaling-laws-for-neural-language-models](https://openai.com/research/scaling-laws-for-neural-language-models)
-   Why: Practical stability and scaling intuition.
 
 2. **Stanford CS25 (LLMs)**
    [https://web.stanford.edu/class/cs25/](https://web.stanford.edu/class/cs25/)
-   Why: Real-world training insights.
 
 ---
 
@@ -92,27 +86,19 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 
 1. **OpenAI — Evaluating Language Models**
    [https://openai.com/research/evaluating-language-models](https://openai.com/research/evaluating-language-models)
-   Why: Why scalar metrics fail.
 
 2. **Holistic Evaluation of Language Models**
    [https://arxiv.org/abs/2211.09110](https://arxiv.org/abs/2211.09110)
-   Why: Slicing, robustness, and behavioral testing.
 
 3. **Google — Beyond Accuracy**
    [https://arxiv.org/abs/2506.04723](https://arxiv.org/abs/2506.04723)
-   Why: How strong teams reason about failures.
 
 ---
 
 #### Practical evaluation intuition
 
-1. **Lilian Weng — LLM Evaluation**
-   [https://lilianweng.github.io/posts/2024-02-05-llm-evaluation/](https://lilianweng.github.io/posts/2024-02-05-llm-evaluation/)
-   Why: Practical taxonomy of evaluation methods and pitfalls.
-
-2. **Anthropic — Red Teaming Language Models**
-   [https://www.anthropic.com/research/red-teaming-language-models](https://www.anthropic.com/research/red-teaming-language-models)
-   Why: Structured failure discovery.
+1. **Anthropic — Red Teaming Language Models**
+   [https://www.anthropic.com/research/red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lessons-learned](https://www.anthropic.com/research/red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lessons-learned)
 
 ---
 
@@ -121,20 +107,17 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 #### Core sources
 
 1. **Data Selection for Language Models**
-   [https://arxiv.org/abs/2202.08906](https://arxiv.org/abs/2202.08906)
-   Why: Filtering and mixing dominate performance.
+   [https://arxiv.org/abs/2402.16827](https://arxiv.org/abs/2402.16827)
 
 2. **The Pile**
    [https://arxiv.org/abs/2101.00027](https://arxiv.org/abs/2101.00027)
-   Why: Data curation philosophy at scale.
 
 ---
 
 #### Practitioner insight
 
 1. **OpenAI Cookbook — Data Preparation**
-   [https://cookbook.openai.com/examples/data_preparation](https://cookbook.openai.com/examples/data_preparation)
-   Why: Practical heuristics.
+   [https://cookbook.openai.com/examples/chat_finetuning_data_prep](https://cookbook.openai.com/examples/chat_finetuning_data_prep)
 
 2. **Training Data Cascades**
    [https://arxiv.org/abs/2209.07753](https://arxiv.org/abs/2209.07753)

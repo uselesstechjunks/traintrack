@@ -1,10 +1,3 @@
-Good. I’ll give you **curated, high-signal sources**, mapped **exactly** to the level you’re expected to operate at for a Research Engineer / Research Scientist (Engineering track).
-This is not an encyclopedic list. Every item below earns its place.
-
-I’ve cross-checked that the links exist and point to the intended content.
-
----
-
 # Tier 1 — Non-Negotiable Core
 
 ## 1. Post-Training LLMs (SFT, DPO, RLHF, preference optimization)
@@ -216,11 +209,3 @@ For each topic:
    * What knob does this give me?
    * When does it fail?
    * What metric does it affect?
-
-If you want, next I can:
-
-* Convert this into a **12-week reading and experimentation plan**
-* Pair readings with **hands-on micro-experiments**
-* Help you design **one flagship project** that uses these ideas
-
-Tell me what you want to do next.

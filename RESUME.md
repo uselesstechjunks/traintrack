@@ -100,13 +100,3 @@ Ask yourself:
 > “If I were asked to improve a trained LLM tomorrow, would this prep help me?”
 
 If the answer is no — drop it.
-
----
-
-## Suggested Next Steps (Pick One)
-
-1. Turn this syllabus into a **12–16 week prep plan**
-2. Rewrite one of your resume sections live using this framing
-3. Design a **single flagship project** aligned to this role
-
-Tell me which one you want to do next.

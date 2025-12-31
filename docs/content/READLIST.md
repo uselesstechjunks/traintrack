@@ -117,8 +117,7 @@ This readlist is structured to match the syllabus **tier-by-tier**.
    [https://cookbook.openai.com/examples/chat_finetuning_data_prep](https://cookbook.openai.com/examples/chat_finetuning_data_prep)
 
 2. **Training Data Cascades**
-   [https://arxiv.org/abs/2209.07753](https://arxiv.org/abs/2209.07753)
-   Why: How early data decisions poison downstream stages.
+   [https://storage.googleapis.com/gweb-research2023-media/pubtools/5936.pdf](https://storage.googleapis.com/gweb-research2023-media/pubtools/5936.pdf)
 
 ---
 
@@ -128,15 +127,12 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 
 1. **Megatron-LM**
    [https://arxiv.org/abs/1909.08053](https://arxiv.org/abs/1909.08053)
-   Why: Why model parallelism exists.
 
 2. **ZeRO**
    [https://arxiv.org/abs/1910.02054](https://arxiv.org/abs/1910.02054)
-   Why: Memory vs compute tradeoffs.
 
 3. **Hugging Face — Parallelism Guide**
    [https://huggingface.co/docs/transformers/perf_train_gpu_many](https://huggingface.co/docs/transformers/perf_train_gpu_many)
-   Why: Clear conceptual mapping of DP / MP / PP.
 
 ---
 
@@ -144,11 +140,9 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 
 1. **Mixed Precision Training**
    [https://arxiv.org/abs/1710.03740](https://arxiv.org/abs/1710.03740)
-   Why: Precision changes optimization dynamics.
 
 2. **PyTorch Activation Checkpointing**
    [https://pytorch.org/docs/stable/checkpoint.html](https://pytorch.org/docs/stable/checkpoint.html)
-   Why: Memory tradeoffs and hidden costs.
 
 ---
 
@@ -158,23 +152,19 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 
 1. **Karpathy — A Recipe for Training Neural Networks**
    [https://karpathy.github.io/2019/04/25/recipe/](https://karpathy.github.io/2019/04/25/recipe/)
-   Why: Research taste distilled.
 
 2. **Richard Sutton — The Bitter Lesson**
    [http://www.incompleteideas.net/IncIdeas/BitterLesson.html](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
-   Why: Scaling vs cleverness.
 
 ---
 
 ### 8. Reading Research Effectively
 
-1. **How to Read ML Papers — Sanjeev Arora**
-   [https://www.cs.princeton.edu/~arora/pubs/reading.pdf](https://www.cs.princeton.edu/~arora/pubs/reading.pdf)
-   Why: Extract actionable knobs.
+1. **How to Read ML Papers — NVIDIA**
+   [https://developer.nvidia.com/blog/how-to-read-research-papers-a-pragmatic-approach-for-ml-practitioners/](https://developer.nvidia.com/blog/how-to-read-research-papers-a-pragmatic-approach-for-ml-practitioners/)
 
-2. **Meta AI — Importance of Experimentation**
-   [https://ai.facebook.com/blog/the-importance-of-experimentation-in-ml-research/](https://ai.facebook.com/blog/the-importance-of-experimentation-in-ml-research/)
-   Why: Industry research reality.
+2. **Importance of Experimentation**
+   [https://www.chrishayduk.com/p/the-role-of-experimentation-in-fundamental](https://www.chrishayduk.com/p/the-role-of-experimentation-in-fundamental)
 
 ---
 
@@ -185,9 +175,9 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 **Objective Misalignment**
 
 * Reward Is Not the Optimization Objective
-  [https://www.lesswrong.com/posts/bmfnzqTjQ9H6k8YyZ/reward-is-not-the-optimization-objective](https://www.lesswrong.com/posts/bmfnzqTjQ9H6k8YyZ/reward-is-not-the-optimization-objective)
+  [https://www.lesswrong.com/posts/pdaGN6pQyQarFHXF4/reward-is-not-the-optimization-target](https://www.lesswrong.com/posts/pdaGN6pQyQarFHXF4/reward-is-not-the-optimization-target)
 * Specification Gaming (DeepMind)
-  [https://deepmind.google/discover/blog/specification-gaming-the-flawed-way-to-design-ai/](https://deepmind.google/discover/blog/specification-gaming-the-flawed-way-to-design-ai/)
+  [https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/](https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/)
 * Faulty Reward Functions (OpenAI)
   [https://openai.com/research/faulty-reward-functions](https://openai.com/research/faulty-reward-functions)
 
@@ -195,40 +185,40 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 
 * Catastrophic Forgetting
   [https://arxiv.org/abs/1612.00796](https://arxiv.org/abs/1612.00796)
-* Risks from Learned Optimization (Anthropic)
-  [https://www.anthropic.com/research/risks-from-learned-optimization](https://www.anthropic.com/research/risks-from-learned-optimization)
+* Risks from Learned Optimization
+  [https://www.alignmentforum.org/s/r9tYkB2a8Fp4DN8yB](https://www.alignmentforum.org/s/r9tYkB2a8Fp4DN8yB)
 
 **Causal Reasoning**
 
 * A/B Testing ML Systems
-  [https://research.google/pubs/pub46753/](https://research.google/pubs/pub46753/)
+  [https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36500.pdf](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36500.pdf)
 * Causal Confusion in ML
-  [https://arxiv.org/abs/1806.09305](https://arxiv.org/abs/1806.09305)
+  [https://arxiv.org/abs/1905.11979](https://arxiv.org/abs/1905.11979)
 
 **Human Feedback Pathologies**
 
 * Social Biases of RLHF
   [https://arxiv.org/abs/2303.17548](https://arxiv.org/abs/2303.17548)
 * Challenges in Data Annotation
-  [https://openai.com/research/challenges-in-data-annotation](https://openai.com/research/challenges-in-data-annotation)
+  [https://hai.stanford.edu/news/exploring-complex-ethical-challenges-data-annotation](https://hai.stanford.edu/news/exploring-complex-ethical-challenges-data-annotation)
 
 **Drift**
 
 * Why Models Fail After Deployment
-  [https://arxiv.org/abs/2302.00942](https://arxiv.org/abs/2302.00942)
+  [https://arxiv.org/abs/2203.11070](https://arxiv.org/abs/2203.11070)
 * Evaluation Is Broken
-  [https://www.alignmentforum.org/posts/9iA6WZp4bKc9bZ8F8/evaluation-is-broken](https://www.alignmentforum.org/posts/9iA6WZp4bKc9bZ8F8/evaluation-is-broken)
+  [https://www.alignmentforum.org/posts/dBmfb76zx6wjPsBC7](https://www.alignmentforum.org/posts/dBmfb76zx6wjPsBC7)
 
 ---
 
 ### Case Studies
 
 * Microsoft Tay Postmortem
-  [https://www.microsoft.com/en-us/research/blog/learning-from-tay/](https://www.microsoft.com/en-us/research/blog/learning-from-tay/)
+  [https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction/](https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction/)
 * GPT-4 System Card
   [https://cdn.openai.com/papers/gpt-4-system-card.pdf](https://cdn.openai.com/papers/gpt-4-system-card.pdf)
 * Anthropic — Constitutional AI
-  [https://www.anthropic.com/research/constitutional-ai](https://www.anthropic.com/research/constitutional-ai)
+  [https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback](https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback)
 * InstructGPT
   [https://openai.com/research/instruction-following](https://openai.com/research/instruction-following)
 
@@ -248,10 +238,9 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 ### Safety–Capability Tradeoffs
 
 * Helpful, Harmless, Honest
-  [https://www.anthropic.com/research/helpful-harmless-honest](https://www.anthropic.com/research/helpful-harmless-honest)
+  [https://arxiv.org/pdf/2204.05862](https://arxiv.org/pdf/2204.05862)
 * Measuring Harms and Benefits
-  [https://arxiv.org/abs/2303.16248](https://arxiv.org/abs/2303.16248)
-* GPT-4 System Card (re-read)
+  [https://arxiv.org/abs/2304.04359](https://arxiv.org/abs/2304.04359)
 
 ### Compute & Strategy
 

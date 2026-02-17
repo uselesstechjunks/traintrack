@@ -57,7 +57,7 @@ What happens with ZeRO stage 3?
 Read:
 
 * NCCL ring AllReduce explanation - [here](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html)
-* Communication vs compute overlap articles - [paper](https://arxiv.org/abs/2507.03114)
+* Communication vs compute overlap articles - [paper1](https://dl.acm.org/doi/pdf/10.1145/3567955.3567959), [paper2](https://arxiv.org/abs/2507.03114)
 * Megatron communication diagrams - [this](https://danielvegamyhre.github.io/ml/performance/2025/03/30/illustrated-megatron.html), [this](https://deepwiki.com/ROCm/Megatron-LM/3.3-communication-primitives), [this](https://docs.nvidia.com/nemo/megatron-bridge/latest/parallelisms.html)
 
 Be able to explain:

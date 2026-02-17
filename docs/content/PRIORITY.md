@@ -19,10 +19,10 @@ You must deeply understand:
 
 Read in this order:
 
-1. Megatron-LM paper
-2. DeepSpeed ZeRO paper
-3. PyTorch FSDP docs
-4. Hugging Face blog: “Parallelism Strategies for Training LLMs”
+1. [Megatron-LM paper](https://arxiv.org/abs/1909.08053)
+2. [DeepSpeed ZeRO paper](https://arxiv.org/abs/1910.02054)
+3. [PyTorch FSDP docs](https://docs.pytorch.org/docs/stable/fsdp.html)
+4. [Hugging Face blog: “Parallelism Strategies for Training LLMs”](https://huggingface.co/docs/transformers/main/en/perf_train_gpu_many)
 
 Do not skim.
 Build a one-page summary for yourself after each.
@@ -42,7 +42,8 @@ You must know:
 
 Read:
 
-* “How to Train a 175B Parameter Model” blog (Eleuther or similar breakdowns)
+* [“How to Train a 175B Parameter Model” blog](https://markaicode.com/multi-node-training-175b-parameter-models/) (Eleuther or similar breakdowns)
+* Other blogs such as [this](https://markaicode.com/llm-memory-optimization-reduce-vram-usage/), [this](https://blog.ezyang.com/)
 * Any blog explaining memory breakdown in LLM training
 
 Be able to calculate:
@@ -55,9 +56,9 @@ What happens with ZeRO stage 3?
 
 Read:
 
-* NCCL ring AllReduce explanation
-* Communication vs compute overlap articles
-* Megatron communication diagrams
+* NCCL ring AllReduce explanation - [here](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/usage/collectives.html)
+* Communication vs compute overlap articles - [paper](https://arxiv.org/abs/2507.03114)
+* Megatron communication diagrams - [this](https://danielvegamyhre.github.io/ml/performance/2025/03/30/illustrated-megatron.html), [this](https://deepwiki.com/ROCm/Megatron-LM/3.3-communication-primitives), [this](https://docs.nvidia.com/nemo/megatron-bridge/latest/parallelisms.html)
 
 Be able to explain:
 
@@ -69,9 +70,9 @@ Be able to explain:
 
 Read:
 
-* CUDA programming model overview
-* Ampere architecture summary
-* Triton tutorial (matmul example)
+* CUDA programming model overview - [this](https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html)
+* Ampere architecture summary - [this](https://developer.nvidia.com/blog/nvidia-ampere-architecture-in-depth/)
+* Triton tutorial (matmul example) - [here](https://triton-lang.org/main/getting-started/tutorials/03-matrix-multiplication.html)
 
 You don’t need to write kernels.
 But you must understand:
@@ -83,8 +84,8 @@ Why kernel fusion helps.
 
 Read:
 
-* Nsight Systems tutorial
-* PyTorch profiler docs
+* Nsight Systems tutorial - [here](https://docs.nvidia.com/nsight-systems/UserGuide/index.html)
+* PyTorch profiler docs - [here](https://docs.pytorch.org/docs/stable/profiler.html)
 
 Understand:
 

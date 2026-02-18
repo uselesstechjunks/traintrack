@@ -1,47 +1,39 @@
-# Compute flops for a GPU
+# Compute FLOPs from #multiply-add operations.
 
-Compute FLOPs for a GPU for a given number of multiply-add operations.
-
-1. Start with **throughput per SM per clock** expressed as **“multiply-add operations / clock / SM”** (from their table/figure).
+1. Start with **throughput per SM per clock** expressed as **“multiply-add operations / clock / SM”** (from NVIDIA table/figure).
 2. Convert multiply-adds to **floating-point operations (FLOPs)** by deciding how many FLOPs a multiply-add counts as.
 3. Scale up by **#SMs** and **clock frequency** to get **FLOPs/second**.
 
-NVIDIA’s convention here is:
+NVIDIA’s convention is:
 
 * **1 multiply-add (i.e., fused multiply-add, FMA)** = **2 FLOPs**
   (one multiply + one add). ([NVIDIA Docs][1])
 
 So the conversion is:
 
-[
-\text{FLOPs/clock/SM} = 2 \times (\text{multiply-adds/clock/SM})
-]
+$$\text{FLOPs/clock/SM} = 2 \times (\text{multiply-adds/clock/SM})$$
 
-Then for the whole GPU:
+Then throughput for the whole GPU:
 
-[
-\text{FLOPs/s} = 2 \times (\text{multiply-adds/clock/SM}) \times (#\text{SMs}) \times (\text{clock in cycles/s})
-]
+$$\text{FLOPs/s} = 2 \times (\text{multiply-adds/clock/SM}) \times (\\#\text{SMs}) \times (\text{clock in cycles/s})$$
 
 And to express it in TFLOPs:
 
-[
-\text{TFLOPs} = \frac{\text{FLOPs/s}}{10^{12}}
-]
+$$\text{TFLOPs} = \frac{\text{FLOPs/s}}{10^{12}}$$
 
-## Working the A100 example backwards (to see the table values)
+## Working the A100 example backwards
 
-NVIDIA says (A100): **108 SMs**, **1.41 GHz**, peak dense: **156 TF32 TFLOPs** and **312 FP16 TFLOPs**. ([NVIDIA Docs][1])
+A100: **108 SMs**, **1.41 GHz**, peak dense: **156 TF32 TFLOPs** and **312 FP16 TFLOPs**. ([NVIDIA Docs][1])
 
 Let’s solve for the implied multiply-adds/clock/SM.
 
 ### TF32
 
-[
+$$
 \text{MA/clock/SM} =
 \frac{156\times 10^{12}}{2 \times 108 \times 1.41\times 10^{9}}
 \approx 512
-]
+$$
 
 So the table’s TF32 entry for A100 is effectively **512 multiply-adds per clock per SM** (dense).
 
@@ -52,11 +44,11 @@ Check the forward direction:
 
 ### FP16
 
-[
+$$
 \text{MA/clock/SM} =
 \frac{312\times 10^{12}}{2 \times 108 \times 1.41\times 10^{9}}
 \approx 1024
-]
+$$
 
 So FP16 is **1024 multiply-adds per clock per SM** (dense), which matches how A100 Tensor Core dense FP16 FMA throughput is commonly described per SM. ([NVIDIA Images][2])
 

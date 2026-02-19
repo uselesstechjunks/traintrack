@@ -81,10 +81,10 @@ Source code (.cu)
     │
     └──► x86-64 host code (launch stubs, runtime registration)
 ```
-When you write `kernel<<<1, 100>>>(a, out)`, the compiler splits it into:
-- GPU side: the PTX/SASS that each of the 100 threads executes
+- When you write `kernel<<<1, 100>>>(a, out)`, the compiler splits it into:
+  - GPU side: the PTX/SASS that each of the 100 threads executes
   - CPU side: boilerplate that registers the kernel at startup, packs arguments, and calls cudaLaunchKernel
-Here's the full PTX execution traced step by step. I'll use thread 3 (threadIdx.x = 3) as a concrete example, assuming a is at address 0x7F00 and out is at 0x8F00.                                                                                                                                                  
+- Here's the full PTX execution traced step by step. I'll use thread 3 (threadIdx.x = 3) as a concrete example, assuming a is at address 0x7F00 and out is at 0x8F00.                                                                                                                                                  
 ```                                                                 
    PARAMETER SPACE                    SPECIAL REGISTERS
   ┌─────────────────┐                ┌─────────────────┐                                                                                                                                                                                                                                                               
@@ -153,8 +153,8 @@ Here's the full PTX execution traced step by step. I'll use thread 3 (threadIdx.
     │    │                                                       │
     │    │   GLOBAL MEMORY                                       │
     │    │   ┌──────────────────────────┐                        │
-    │    │   │  addr 0x7F0C  ═  a[3]   │                         │
-    │    │   │  value: 5.0             │───► %f1 = 5.0           │
+    │    │   │  addr 0x7F0C  ═  a[3]    │                        │
+    │    │   │  value: 5.0              │───► %f1 = 5.0          │
     │    │   └──────────────────────────┘                        │
     │    │                                                       │
     └────────────────────────────────────────────────────────────┘
@@ -183,7 +183,7 @@ Here's the full PTX execution traced step by step. I'll use thread 3 (threadIdx.
     │    │   %f2 (15.0) ───► GLOBAL MEMORY                       │
     │    │                   ┌──────────────────────────┐        │
     │    │                   │  addr 0x8F0C  ═  out[3]  │        │
-    │    │                   │  value: 15.0              │       │
+    │    │                   │  value: 15.0             │        │
     │    │                   └──────────────────────────┘        │
     │    │                                                       │
     └────────────────────────────────────────────────────────────┘

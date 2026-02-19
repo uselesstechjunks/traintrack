@@ -245,7 +245,7 @@ Each thread has its OWN copy of all registers (r1, rd1-rd7, f1-f2). No thread re
 	ret;
 }
 ```
-### 6. Full x86-64 Host Code
+## 6. Full x86-64 Host Code
 ```
 __nv_save_fatbinhandle_for_managed_rt(void**):
         pushq   %rbp

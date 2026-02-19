@@ -4,6 +4,7 @@
 3. Performance debugging intuition
 
 # GPU Performance Engineering Resource
+- [NVIDIA Deep Learning Performance](https://docs.nvidia.com/deeplearning/performance/dl-performance-getting-started/index.html)
 - [Learning Guide: Performance Engineering for AI Infra](https://github.com/wafer-ai/gpu-perf-engineering-resources)
 - [Introduction to CUDA Programming With GPU Puzzles](https://henryhmko.github.io/posts/cuda/cuda.html)
 - [LeetGPU](https://leetgpu.com/challenges)

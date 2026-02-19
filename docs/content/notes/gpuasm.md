@@ -590,3 +590,81 @@ cudaError cudaLaunchKernel<char>(char const*, dim3, dim3, void**, unsigned long,
         leave
         ret
 ```
+## 7. A Different Kernel with Caller Code
+```
+#include <fstream>
+
+using std::fprintf;
+using std::printf;
+
+__global__ void addTenKernel(const double *a, double *out,
+                            int width) {
+    int col = blockIdx.x * blockDim.x + threadIdx.x;
+    int row = blockIdx.y * blockDim.y + threadIdx.y;
+    int z   = blockIdx.z * blockDim.z + threadIdx.z;
+
+    if (col < width && row < width && z < width) {
+        int idx = z * width * width + row * width + col;
+        out[idx] = a[idx] + 10;
+    }
+}
+
+int main() {
+      int width = 128;  // 128³ = ~2M elements, ~32 MB — fits easily
+
+      size_t numElements = (size_t)width * width * width;
+      size_t bytes = numElements * sizeof(double);
+
+      // ── 1. Allocate host memory ──
+      double *h_a   = (double*)malloc(bytes);
+      double *h_out = (double*)malloc(bytes);
+
+      // ── 2. Initialize input data ──
+      for (size_t i = 0; i < numElements; i++) {
+          h_a[i] = (double)i;
+      }
+
+      // ── 3. Allocate device memory ──
+      double *d_a, *d_out;
+      cudaMalloc(&d_a,   bytes);
+      cudaMalloc(&d_out, bytes);
+
+      // ── 4. Copy input to GPU ──
+      cudaMemcpy(d_a, h_a, bytes, cudaMemcpyHostToDevice);
+
+      // ── 5. Launch kernel ──
+      dim3 blockSize(8, 8, 8);  // 512 threads per block
+      dim3 gridSize(
+          (width + 7) / 8,
+          (width + 7) / 8,
+          (width + 7) / 8
+      );
+      addTenKernel<<<gridSize, blockSize>>>(d_a, d_out, width);
+
+      // ── 6. Check for launch errors ──
+      cudaError_t err = cudaGetLastError();
+      if (err != cudaSuccess) {
+          fprintf(stderr, "Kernel launch failed: %s\n", cudaGetErrorString(err));
+          return 1;
+      }
+
+      // ── 7. Wait for kernel to finish ──
+      cudaDeviceSynchronize();
+
+      // ── 8. Copy results back to CPU ──
+      cudaMemcpy(h_out, d_out, bytes, cudaMemcpyDeviceToHost);
+
+      // ── 9. Verify ──
+      for (int i = 0; i < 5; i++) {
+          printf("h_out[%d] = %f (expected %f)\n", i, h_out[i], h_a[i] + 10.0);
+      }
+
+      // ── 10. Cleanup ──
+      cudaFree(d_a);
+      cudaFree(d_out);
+      free(h_a);
+      free(h_out);
+
+      return 0;
+  }
+```

@@ -84,8 +84,145 @@ Source code (.cu)
 When you write `kernel<<<1, 100>>>(a, out)`, the compiler splits it into:
 - GPU side: the PTX/SASS that each of the 100 threads executes
   - CPU side: boilerplate that registers the kernel at startup, packs arguments, and calls cudaLaunchKernel
+Here's the full PTX execution traced step by step. I'll use thread 3 (threadIdx.x = 3) as a concrete example, assuming a is at address 0x7F00 and out is at 0x8F00.                                                                                                                                                  
+```                                                                 
+   PARAMETER SPACE                    SPECIAL REGISTERS
+  ┌─────────────────┐                ┌─────────────────┐                                                                                                                                                                                                                                                               
+  │ param_0: 0x7F00 │ (ptr to a)     │ %tid.x:  3      │
+  │ param_1: 0x8F00 │ (ptr to out)   └─────────────────┘                                                                                                                                                                                                                                                               
+  └─────────────────┘                                   
 
-For learning CUDA, the PTX section is the most valuable to study. The host-side x86 is mechanical boilerplate you'll never write by hand.
+   GLOBAL MEMORY (GPU DRAM)
+  ┌────────┬────────┬────────┬────────┬────────┬─────┐
+  │ a[0]   │ a[1]   │ a[2]   │ a[3]   │ a[4]   │ ... │  (input, read-only)
+  │ 1.0    │ 2.0    │ 3.0    │ 5.0    │ 7.0    │     │
+  ├────────┼────────┼────────┼────────┼────────┼─────┤
+  │ +0     │ +4     │ +8     │ +12    │ +16    │     │  (byte offsets)
+  └────────┴────────┴────────┴────────┴────────┴─────┘
+  ┌────────┬────────┬────────┬────────┬────────┬─────┐
+  │ out[0] │ out[1] │ out[2] │ out[3] │ out[4] │ ... │  (output)
+  │  ??    │  ??    │  ??    │  ??    │  ??    │     │
+  └────────┴────────┴────────┴────────┴────────┴─────┘
+═══════════════════════════════════════════════════════════════════
+    STEP   INSTRUCTION                        REGISTERS AFTER
+═══════════════════════════════════════════════════════════════════
+    ┌─ PHASE 1: LOAD PARAMETERS ─────────────────────────────────┐
+    │                                                            │
+    │  1 │ ld.param.u64  %rd1, [param_0]                         │
+    │    │                                                       │
+    │    │   param_0 ──────► %rd1 = 0x7F00  (ptr to a)           │
+    │    │                                                       │
+    │  2 │ ld.param.u64  %rd2, [param_1]                         │
+    │    │                                                       │
+    │    │   param_1 ──────► %rd2 = 0x8F00  (ptr to out)         │
+    │    │                                                       │
+    └────────────────────────────────────────────────────────────┘
+    ┌─ PHASE 2: CONVERT TO GLOBAL ADDRESS SPACE ─────────────────┐
+    │                                                            │
+    │  3 │ cvta.to.global.u64  %rd3, %rd2                        │
+    │    │                                                       │
+    │    │   %rd2 ──[cvta]──► %rd3 = 0x8F00  (global out ptr)    │
+    │    │                                                       │
+    │  4 │ cvta.to.global.u64  %rd4, %rd1                        │
+    │    │                                                       │
+    │    │   %rd1 ──[cvta]──► %rd4 = 0x7F00  (global a ptr)      │
+    │    │                                                       │
+    └────────────────────────────────────────────────────────────┘
+    ┌─ PHASE 3: COMPUTE BYTE OFFSET ─────────────────────────────┐
+    │                                                            │
+    │  5 │ mov.u32  %r1, %tid.x                                  │
+    │    │                                                       │
+    │    │   %tid.x ──────► %r1 = 3  (thread index)              │
+    │    │                                                       │
+    │  6 │ mul.wide.s32  %rd5, %r1, 4                            │
+    │    │                                                       │
+    │    │   %r1 ──[× 4]──► %rd5 = 12  (byte offset)             │
+    │    │                   32-bit       64-bit                 │
+    │    │                                                       │
+    │    │   WHY × 4?  sizeof(float) = 4 bytes                   │
+    │    │   Element 3 starts at byte 12                         │
+    │    │                                                       │
+    └────────────────────────────────────────────────────────────┘
+    ┌─ PHASE 4: LOAD a[3] ───────────────────────────────────────┐
+    │                                                            │
+    │  7 │ add.s64  %rd6, %rd4, %rd5                             │
+    │    │                                                       │
+    │    │   %rd4 (0x7F00) + %rd5 (12) ──► %rd6 = 0x7F0C         │
+    │    │                                                       │
+    │  8 │ ld.global.f32  %f1, [%rd6]                            │
+    │    │                                                       │
+    │    │   GLOBAL MEMORY                                       │
+    │    │   ┌──────────────────────────┐                        │
+    │    │   │  addr 0x7F0C  ═  a[3]   │                         │
+    │    │   │  value: 5.0             │───► %f1 = 5.0           │
+    │    │   └──────────────────────────┘                        │
+    │    │                                                       │
+    └────────────────────────────────────────────────────────────┘
+    ┌─ PHASE 5: ADD 10 ──────────────────────────────────────────┐
+    │                                                            │
+    │  9 │ add.f32  %f2, %f1, 0f41200000                         │
+    │    │                                                       │
+    │    │   %f1 (5.0) + 10.0 ──► %f2 = 15.0                     │
+    │    │                                                       │
+    │    │   0f41200000 is IEEE 754 for 10.0:                    │
+    │    │   0 10000010 01000000000000000000000                  │
+    │    │   │ ├──────┘ └──────────────────────┘                 │
+    │    │   │ exp=130    mantissa=1.25                          │
+    │    │   sign=+                                              │
+    │    │   = +1 × 2^(130-127) × 1.25 = 8 × 1.25 = 10.0         │
+    │    │                                                       │
+    └────────────────────────────────────────────────────────────┘
+    ┌─ PHASE 6: STORE TO out[3] ─────────────────────────────────┐
+    │                                                            │
+    │ 10 │ add.s64  %rd7, %rd3, %rd5                             │
+    │    │                                                       │
+    │    │   %rd3 (0x8F00) + %rd5 (12) ──► %rd7 = 0x8F0C         │
+    │    │                                                       │
+    │ 11 │ st.global.f32  [%rd7], %f2                            │
+    │    │                                                       │
+    │    │   %f2 (15.0) ───► GLOBAL MEMORY                       │
+    │    │                   ┌──────────────────────────┐        │
+    │    │                   │  addr 0x8F0C  ═  out[3]  │        │
+    │    │                   │  value: 15.0              │       │
+    │    │                   └──────────────────────────┘        │
+    │    │                                                       │
+    └────────────────────────────────────────────────────────────┘
+    12 │ ret;
+═══════════════════════════════════════════════════════════════════
+    FINAL REGISTER STATE (thread 3)
+═══════════════════════════════════════════════════════════════════
+    64-bit address regs        32-bit int regs    32-bit float regs
+    ┌──────────────────┐       ┌──────────────┐   ┌──────────────┐
+    │ %rd1 = 0x7F00    │       │ %r1  = 3     │   │ %f1 = 5.0    │
+    │ %rd2 = 0x8F00    │       └──────────────┘   │ %f2 = 15.0   │
+    │ %rd3 = 0x8F00    │                          └──────────────┘
+    │ %rd4 = 0x7F00    │
+    │ %rd5 = 12        │  ← shared by both load and store paths
+    │ %rd6 = 0x7F0C    │  ← &a[3]
+    │ %rd7 = 0x8F0C    │  ← &out[3]
+    └──────────────────┘
+═══════════════════════════════════════════════════════════════════
+    DATA FLOW SUMMARY
+═══════════════════════════════════════════════════════════════════
+    param_0 ─► rd1 ─► rd4 ─┐
+                           ├─► rd6 ──► ld.global ──► f1 ─┐
+    %tid.x ──► r1 ──► rd5 ─┤                             ├► f2 ──► st.global ──► out[3]
+                           ├─► rd7 ──────────────────────┘
+    param_1 ─► rd2 ─► rd3 ─┘                          ▲
+                                                      │
+                                                10.0 (immediate)
+═══════════════════════════════════════════════════════════════════
+    ALL 100 THREADS EXECUTING IN PARALLEL
+═══════════════════════════════════════════════════════════════════
+    Thread 0:  a[0]  + 10 ──► out[0]     (%tid.x=0,  offset=0)
+    Thread 1:  a[1]  + 10 ──► out[1]     (%tid.x=1,  offset=4)
+    Thread 2:  a[2]  + 10 ──► out[2]     (%tid.x=2,  offset=8)
+    Thread 3:  a[3]  + 10 ──► out[3]     (%tid.x=3,  offset=12)  ◄── traced above
+    Thread 4:  a[4]  + 10 ──► out[4]     (%tid.x=4,  offset=16)
+       ...        ...                        ...
+    Thread 99: a[99] + 10 ──► out[99]    (%tid.x=99, offset=396)   
+```
+Each thread has its OWN copy of all registers (r1, rd1-rd7, f1-f2). No thread reads another thread's data — zero synchronization needed.
 
 ## 5. Full PTX code
 ```

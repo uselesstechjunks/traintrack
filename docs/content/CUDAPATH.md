@@ -58,7 +58,7 @@ Concepts
   - Use warp shuffles for intra-warp reduction and shared memory for inter-warp communication.
   - Verify against a CPU sum.
 
-# Module 5: Memory Coalescing & Occupancy
+## Module 5: Memory Coalescing & Occupancy
 - Expectation: Understands performance optimization levers
 - Concepts
   - Memory coalescing: adjacent threads should access adjacent memory addresses.

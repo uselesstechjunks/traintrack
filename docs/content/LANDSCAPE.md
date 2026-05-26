@@ -3,9 +3,9 @@
 ### 0.1 Transformers
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
 - [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/)
-### 0.2 Parameter counting
-- [LLM Parameter Counting](https://kipp.ly/p/transformer-param-count)
-### 0.3 Compute calculation
+### 0.2 Counting
+- [Transformer Parameters](https://kipp.ly/p/transformer-param-count)
+- [Transformer FLOPs](https://www.adamcasson.com/posts/transformer-flops)
 - [Transformer Training Arithmetic](https://blog.eleuther.ai/transformer-math/)
 - [Transformer Inference Arithmetic](https://kipp.ly/p/transformer-inference-arithmetic)
 ## 1. Scaling Laws

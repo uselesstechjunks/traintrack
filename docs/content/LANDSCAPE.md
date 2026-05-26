@@ -2,6 +2,7 @@
 ## 0. Base
 ### 0.1 Transformers
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+- [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/)
 ### 0.2 Parameter counting
 - [LLM Parameter Counting](https://kipp.ly/p/transformer-param-count)
 ### 0.3 Compute calculation

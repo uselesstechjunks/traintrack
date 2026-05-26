@@ -22,3 +22,6 @@
 #### N.1.1 Batch size choice
 - [An Empirical Model of Large-Batch Training](https://ar5iv.labs.arxiv.org/html/1812.06162)
 - [On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima](https://ar5iv.labs.arxiv.org/html/1609.04836)
+### N.2 NTK
+- [Neural Tangent Kernel: Convergence and Generalization in Neural Networks](https://ar5iv.labs.arxiv.org/html/1806.07572)
+- [Gaussian Processes and Kernel Methods: A Review on Connections and Equivalences](https://ar5iv.labs.arxiv.org/html/1807.02582)

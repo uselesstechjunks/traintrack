@@ -1,15 +1,20 @@
-# Reading List — Research Engineer / Research Scientist (Training-Focused Roles)
+# Reading List — Research Engineer / Research Scientist
+## (Training-Focused Roles)
 
-This readlist is structured to match the syllabus **tier-by-tier**.
+## How to Use This
+For each tier:
+1. Read one **core** source
+2. One **practitioner** source
+3. Write:
+   1. What knob this gives you
+   2. When it fails
+   3. What metric it affects
 
----
-
-## Tier 1 — Core Model Improvement (Non-Negotiable)
+## Tier 1 — Core Model Improvement
 
 ### 1. Post-Training LLMs (SFT, DPO, RLHF, Preference Optimization)
 
-#### Primary sources (read all)
-
+#### Primary sources
 1. **RLHF Book — Nathan Lambert**
    [https://rlhfbook.com/](https://rlhfbook.com/)
 2. **Hugging Face TRL Documentation**
@@ -23,16 +28,12 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 6. **OpenAI — Learning from Human Preferences**
    [https://openai.com/research/learning-from-human-preferences](https://openai.com/research/learning-from-human-preferences)
 
----
-
-#### Supporting intuition (highly recommended)
+#### Supporting intuition
 
 1. **Sebastian Raschka — LLM Finetuning Overview**
    [https://magazine.sebastianraschka.com/p/finetuning-large-language-models](https://magazine.sebastianraschka.com/p/finetuning-large-language-models)
 2. **Lilian Weng — RLHF**
    [https://lilianweng.github.io/tags/rlhf/](https://lilianweng.github.io/tags/rlhf/)
-
----
 
 ### 2. Training Dynamics & Optimization at Scale
 
@@ -49,16 +50,12 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 5. **Andrej Karpathy — Neural Nets: 20 Years**
    [https://karpathy.github.io/2022/03/14/lecun1989/](https://karpathy.github.io/2022/03/14/lecun1989/)
 
----
-
 #### Practitioner-level intuition
 
 1. **OpenAI — Scaling Laws Blog**
    [https://openai.com/research/scaling-laws-for-neural-language-models](https://openai.com/research/scaling-laws-for-neural-language-models)
 2. **Stanford CS25 (LLMs)**
    [https://web.stanford.edu/class/cs25/](https://web.stanford.edu/class/cs25/)
-
----
 
 ### 3. Evaluation, Metrics, and Debugging
 
@@ -75,14 +72,10 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 5. **Google — Beyond Accuracy**
    [https://arxiv.org/abs/2506.04723](https://arxiv.org/abs/2506.04723)
 
----
-
 #### Practical evaluation intuition
 
 1. **Anthropic — Red Teaming Language Models**
    [https://www.anthropic.com/research/red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lessons-learned](https://www.anthropic.com/research/red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lessons-learned)
-
----
 
 ### 4. Data as a Training Lever
 
@@ -93,8 +86,6 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 2. **The Pile**
    [https://arxiv.org/abs/2101.00027](https://arxiv.org/abs/2101.00027)
 
----
-
 #### Practitioner insight
 
 1. **OpenAI Cookbook — Data Preparation**
@@ -102,9 +93,7 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 2. **Training Data Cascades**
    [https://storage.googleapis.com/gweb-research2023-media/pubtools/5936.pdf](https://storage.googleapis.com/gweb-research2023-media/pubtools/5936.pdf)
 
----
-
-## Tier 2 — Systems for Training (Only What Affects Models)
+## Tier 2 — Systems for Training
 
 ### 5. Distributed Training
 
@@ -115,16 +104,12 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 3. **Hugging Face — Parallelism Guide**
    [https://huggingface.co/docs/transformers/perf_train_gpu_many](https://huggingface.co/docs/transformers/perf_train_gpu_many)
 
----
-
 ### 6. Efficiency & Precision
 
 1. **Mixed Precision Training**
    [https://arxiv.org/abs/1710.03740](https://arxiv.org/abs/1710.03740)
 2. **PyTorch Activation Checkpointing**
    [https://pytorch.org/docs/stable/checkpoint.html](https://pytorch.org/docs/stable/checkpoint.html)
-
----
 
 ## Tier 3 — Research Judgment & Taste
 
@@ -135,16 +120,12 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 2. **Richard Sutton — The Bitter Lesson**
    [http://www.incompleteideas.net/IncIdeas/BitterLesson.html](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
 
----
-
 ### 8. Reading Research Effectively
 
 1. **How to Read ML Papers — NVIDIA**
    [https://developer.nvidia.com/blog/how-to-read-research-papers-a-pragmatic-approach-for-ml-practitioners/](https://developer.nvidia.com/blog/how-to-read-research-papers-a-pragmatic-approach-for-ml-practitioners/)
 2. **Importance of Experimentation**
    [https://www.chrishayduk.com/p/the-role-of-experimentation-in-fundamental](https://www.chrishayduk.com/p/the-role-of-experimentation-in-fundamental)
-
----
 
 ## Tier 4 — Failure, Drift, and Emergent Behavior
 
@@ -187,7 +168,6 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 2. Evaluation Is Broken
    [https://www.alignmentforum.org/posts/dBmfb76zx6wjPsBC7](https://www.alignmentforum.org/posts/dBmfb76zx6wjPsBC7)
 
----
 
 ### Case Studies
 
@@ -200,7 +180,6 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 4. InstructGPT
    [https://openai.com/research/instruction-following](https://openai.com/research/instruction-following)
 
----
 
 ## Tier 5 — Architecture, Safety, and Strategic Judgment
 
@@ -229,8 +208,6 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 3. Carbon Cost of ML
    [https://arxiv.org/abs/1906.02243](https://arxiv.org/abs/1906.02243)
 
----
-
 ## Tier 6 — Pretraining Context (Targeted)
 
 1. Tokenization and data mixture papers (survey-level)
@@ -238,8 +215,6 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 3. Limits of post-training compensation
 
 (Use GPT-3, Chinchilla, and Pile papers as anchors.)
-
----
 
 ## Tier 7 — Execution & Proof of Skill
 
@@ -256,17 +231,3 @@ This readlist is structured to match the syllabus **tier-by-tier**.
 3. Metric disagreement resolution
 
 (Primary learning via practice + postmortems.)
-
----
-
-## How to Use This
-
-For each tier:
-
-1. Read one **core** source
-2. One **practitioner** source
-3. Write:
-
-   1. What knob this gives you
-   2. When it fails
-   3. What metric it affects

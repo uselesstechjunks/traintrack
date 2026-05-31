@@ -12,6 +12,7 @@
 ### 1.1 Key papers
 - [Scaling Laws for Neural Language Models](https://ar5iv.labs.arxiv.org/html/2001.08361)
 - [Training Compute-Optimal Large Language Models](https://ar5iv.labs.arxiv.org/html/2203.15556)
+- [Chinchilla Scaling: A replication attempt](https://ar5iv.labs.arxiv.org/html/2404.10102)
 ### 1.2 Follow up (theoretical foundatation)
 - [Deriving neural scaling laws from the statistics of natural language](https://ar5iv.labs.arxiv.org/html/2602.07488)
 - [On the origin of neural scaling laws: from random graphs to natural language](https://ar5iv.labs.arxiv.org/html/2601.10684v1)

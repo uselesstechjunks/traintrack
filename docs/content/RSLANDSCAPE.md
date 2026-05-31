@@ -12,10 +12,14 @@
 ### 1.1 Key papers
 - [Scaling Laws for Neural Language Models](https://ar5iv.labs.arxiv.org/html/2001.08361)
 - [Training Compute-Optimal Large Language Models](https://ar5iv.labs.arxiv.org/html/2203.15556)
-### 1.2 Follow up
+### 1.2 Follow up (theoretical foundatation)
 - [Deriving neural scaling laws from the statistics of natural language](https://ar5iv.labs.arxiv.org/html/2602.07488)
 - [On the origin of neural scaling laws: from random graphs to natural language](https://ar5iv.labs.arxiv.org/html/2601.10684v1)
-### 1.3 Follow up [TODO: move elsewhere]
+### 1.2 Follow up (overtraining for inference optimal compute)
+- [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://ar5iv.labs.arxiv.org/html/2408.03314)
+- [An Empirical Analysis of Compute-Optimal Inference for Problem-Solving with Language Models ](https://ar5iv.labs.arxiv.org/html/2408.00724)
+- [Test-Time Scaling Makes Overtraining Compute-Optimal](https://ar5iv.labs.arxiv.org/html/2604.01411)
+### 1.3 Follow up [technical guide]
 - [How to Scale Your Model](https://jax-ml.github.io/scaling-book/)
 ## N. Misc
 ### N.1 Hyperparameters

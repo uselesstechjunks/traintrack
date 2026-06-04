@@ -13,14 +13,22 @@
 - [Scaling Laws for Neural Language Models](https://ar5iv.labs.arxiv.org/html/2001.08361)
 - [Training Compute-Optimal Large Language Models](https://ar5iv.labs.arxiv.org/html/2203.15556)
 - [Chinchilla Scaling: A replication attempt](https://ar5iv.labs.arxiv.org/html/2404.10102)
-### 1.2 Follow up (theoretical foundatation)
+### 1.2 Research follow up
+#### 1.2.1 Nuances, limitations, and challenges of the pretraining scaling law
+- [Chinchilla Scaling: A replication attempt](https://ar5iv.labs.arxiv.org/html/2404.10102)
+- [Scaling Laws Revisited: Modeling the Role of Data Quality in Language Model Pretraining](https://ar5iv.labs.arxiv.org/html/2510.03313v1)
+- [Scaling laws for precision](https://pehlevan.seas.harvard.edu/sites/g/files/omnuum6471/files/2025-03/Kumar_etal_ICLR_2025.pdf)
+- [Scaling Laws Are Unreliable for Downstream Tasks](https://aclanthology.org/2025.findings-emnlp.877.pdf)
+#### 1.2.2 Inference-time compute scaling laws
+- [An Empirical Analysis of Compute-Optimal Inference for Problem-Solving with Language Models ](https://ar5iv.labs.arxiv.org/html/2408.00724)
+- [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://ar5iv.labs.arxiv.org/html/2408.03314)
+- [Test-Time Scaling Makes Overtraining Compute-Optimal](https://ar5iv.labs.arxiv.org/html/2604.01411)
+#### 1.2.3 Theoretical justifications for why power laws happen
+- [Explaining Neural Scaling Laws](https://ar5iv.labs.arxiv.org/html/2102.06701)
+- [How Feature Learning Can Improve Neural Scaling Laws](https://ar5iv.labs.arxiv.org/html/2409.17858)
 - [Deriving neural scaling laws from the statistics of natural language](https://ar5iv.labs.arxiv.org/html/2602.07488)
 - [On the origin of neural scaling laws: from random graphs to natural language](https://ar5iv.labs.arxiv.org/html/2601.10684v1)
-### 1.2 Follow up (overtraining for inference optimal compute)
-- [Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters](https://ar5iv.labs.arxiv.org/html/2408.03314)
-- [An Empirical Analysis of Compute-Optimal Inference for Problem-Solving with Language Models ](https://ar5iv.labs.arxiv.org/html/2408.00724)
-- [Test-Time Scaling Makes Overtraining Compute-Optimal](https://ar5iv.labs.arxiv.org/html/2604.01411)
-### 1.3 Follow up [technical guide]
+### 1.3 Technical follow up
 - [How to Scale Your Model](https://jax-ml.github.io/scaling-book/)
 ## N. Misc
 ### N.1 Hyperparameters

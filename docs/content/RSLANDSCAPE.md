@@ -33,6 +33,7 @@
 - [How Feature Learning Can Improve Neural Scaling Laws](https://ar5iv.labs.arxiv.org/html/2409.17858)
 - [Deriving neural scaling laws from the statistics of natural language](https://ar5iv.labs.arxiv.org/html/2602.07488)
 - [On the origin of neural scaling laws: from random graphs to natural language](https://ar5iv.labs.arxiv.org/html/2601.10684v1)
+- [An exactly solvable model for emergence and scaling laws in the multitask sparse parity problem](https://ar5iv.labs.arxiv.org/html/2404.17563)
 ### 1.3 Technical follow up
 - [How to Scale Your Model](https://jax-ml.github.io/scaling-book/)
 ## N. Misc

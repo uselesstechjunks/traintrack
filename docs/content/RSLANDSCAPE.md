@@ -34,6 +34,11 @@
 - [Deriving neural scaling laws from the statistics of natural language](https://ar5iv.labs.arxiv.org/html/2602.07488)
 - [On the origin of neural scaling laws: from random graphs to natural language](https://ar5iv.labs.arxiv.org/html/2601.10684v1)
 - [An exactly solvable model for emergence and scaling laws in the multitask sparse parity problem](https://ar5iv.labs.arxiv.org/html/2404.17563)
+#### 1.2.4 Particle physics theory
+- [A mathematical perspective on Transformers](https://ar5iv.labs.arxiv.org/html/2312.10794)
+- [The Mean-Field Dynamics of Transformers](https://ar5iv.labs.arxiv.org/html/2512.01868v4)
+#### 1.2.5 Manifold dimension theory
+- [Dimension-Independent Approximations on Low-Dimensional Manifolds Using Transformers](https://www.mdpi.com/2227-7390/14/9/1559)
 ### 1.3 Technical follow up
 - [How to Scale Your Model](https://jax-ml.github.io/scaling-book/)
 ## N. Misc

@@ -40,3 +40,5 @@
 #### N.1.1 Batch size choice
 - [An Empirical Model of Large-Batch Training](https://ar5iv.labs.arxiv.org/html/1812.06162)
 - [On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima](https://ar5iv.labs.arxiv.org/html/1609.04836)
+### N.2 People/Series
+- [Greg Yang/Tensor Programs](https://thegregyang.com/#tppapers)

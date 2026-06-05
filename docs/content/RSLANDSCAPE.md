@@ -11,8 +11,7 @@
 ### 0.3 NTK
 - [Gaussian Processes and Kernel Methods: A Review on Connections and Equivalences](https://ar5iv.labs.arxiv.org/html/1807.02582)
 - [Neural Tangent Kernel: Convergence and Generalization in Neural Networks](https://ar5iv.labs.arxiv.org/html/1806.07572)
-- [On Lazy Training in Differentiable Programming](https://ar5iv.labs.arxiv.org/html/1812.07956)
-- [Feature Learning in Infinite-Width Neural Networks](https://arxiv.org/pdf/2011.14522)
+- [A Spectral Condition for Feature Learning](https://ar5iv.labs.arxiv.org/html/2310.17813)
 ## 1. Scaling Laws
 ### 1.1 Key papers
 - [Scaling Laws for Neural Language Models](https://ar5iv.labs.arxiv.org/html/2001.08361)

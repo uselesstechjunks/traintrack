@@ -13,6 +13,9 @@
 - [Neural Tangent Kernel: Convergence and Generalization in Neural Networks](https://ar5iv.labs.arxiv.org/html/1806.07572)
 ### 0.4 Feature learning
 - [A Spectral Condition for Feature Learning](https://ar5iv.labs.arxiv.org/html/2310.17813)
+### 0.5 Math
+- [Matrix Calculus for Machine Learning and Beyond](https://ocw.mit.edu/courses/18-s096-matrix-calculus-for-machine-learning-and-beyond-january-iap-2023/)
+- [Introduction to Functional Analysis](https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/pages/lecture-notes-and-readings/)
 ## 1. Scaling Laws
 ### 1.1 Key papers
 - [Scaling Laws for Neural Language Models](https://ar5iv.labs.arxiv.org/html/2001.08361)

@@ -42,9 +42,9 @@ What am I trying to achieve?
 - Dataset: $\mathcal{D}=\{\mathbf{z}_i\}_{i=1}^N, \mathbf{z}_i\in\mathbb{R}^d$.
 - Generation: $Z\sim p_{\text{data}}$, sample $Z=\mathbf{z}_i$.
 - Options
-  - 1. Estimate $p_{\text{data}}$ with a parametric family $p^\theta$, sample from $p^\theta$.
+  - 1. Estimate $p_{\text{data}}$ with a parametric family $p_\theta$, sample from $p_\theta$.
   - 2. Learn a morphism from a known $p_{\text{init}}$ into $p_{\text{data}}$, then sample from $p_{\text{init}}$ and morph that.
-- The framework that connects these two views: transport problem.
+- The framework that generalises the second option: transport problem.
 
 #### Notes
 - Regardless of the modality, we think of the data as $d$-dimensional vectors.
@@ -52,7 +52,12 @@ What am I trying to achieve?
 - Options & transport - call out plainly from the slides
 
 ### Slide 4: What is the unifying framework?
-- Transport: 
+- The Goal: Learn a map $T$ that morphs starting distribution $p_{\text{init}}$ to target $p_{\text{data}}$.
+  $$
+  T_\sharp p_\text{init}=p_\text{data}
+  $$
+- Optimal Transport: What is the minimum physical effort required to reshape $p_{\text{init}}$ into $p_{\text{data}}$?
+- Wasserstein Distance: The mathematical formalization of this minimum effort.
 
 ----
 ## Mathematical foundation

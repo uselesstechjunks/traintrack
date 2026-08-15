@@ -27,9 +27,9 @@ Contract with the audience:
 - Towards the later half, we'd touch upon this, discuss the key idea, and provide pointers to resources for more detailed treatments.
 
 Can I write math:
-```math
+$$
 F_\sharp\mu = \nu
-```
+$$
 or inline math like $F_\sharp\mu = \nu$
 
 ## Mathematical foundation

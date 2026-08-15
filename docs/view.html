@@ -33,10 +33,32 @@
         return r.text();
       })
       .then(md => {
+        // const content = document.getElementById('content');
+        
+        // content.innerHTML = marked.parse(md);
+        // const h1 = content.querySelector('h1');
+        // if (h1) document.title = h1.textContent + ' — Notes';
+        // return MathJax.typesetPromise([content]);
+
         const content = document.getElementById('content');
+        const mathBlocks = [];
+        
+        md = md.replace(/\$\$([\s\S]*?)\$\$/g, (_, math) => {
+          const id = mathBlocks.length;
+          mathBlocks.push(math);
+          return `<div data-math-block="${id}"></div>`;
+        });
+        
         content.innerHTML = marked.parse(md);
+        
+        content.querySelectorAll('[data-math-block]').forEach(el => {
+          const id = Number(el.dataset.mathBlock);
+          el.innerHTML = `\\[${mathBlocks[id]}\\]`;
+        });
+        
         const h1 = content.querySelector('h1');
         if (h1) document.title = h1.textContent + ' — Notes';
+        
         return MathJax.typesetPromise([content]);
       })
       .catch(err => {

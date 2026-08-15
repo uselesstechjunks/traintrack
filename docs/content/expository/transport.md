@@ -27,10 +27,10 @@ Contract with the audience:
 - Towards the later half, we'd touch upon this, discuss the key idea, and provide pointers to resources for more detailed treatments.
 
 Can I write math:
-$$
-F_\#\mu=\nu
-$$
-or inline math like $F_\#\mu=\nu$
+```math
+F_\sharp\mu = \nu
+```
+or inline math like $F_\sharp\mu = \nu$
 
 ## Mathematical foundation
 Question: Why we're starting with math? 

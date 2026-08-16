@@ -39,25 +39,45 @@ What am I trying to achieve?
 
 ### Slide 3: Formulation
 #### Content
-- Dataset: $\mathcal{D}=\{\mathbf{z}_i\}_{i=1}^N, \mathbf{z}_i\in\mathbb{R}^d$.
-- Generation: $Z\sim p_{\text{data}}$, sample $Z=\mathbf{z}_i$.
+- Dataset: $D=(z_i)_{i=1}^N, z_i\in\mathbb{R}^d$.
+- Generation: $Z\sim p_{\text{data}}$, sample $Z=z_i$.
 - Options
-  - 1. Estimate $p_{\text{data}}$ with a parametric family $p_\theta$, sample from $p_\theta$.
-  - 2. Learn a morphism from a known $p_{\text{init}}$ into $p_{\text{data}}$, then sample from $p_{\text{init}}$ and morph that.
-- The framework that generalises the second option: transport problem.
+  - 1. Estimate $p_{\text{data}}$ with a parametric model $p_\theta$. Sample from $p_\theta$.
+  - 2. Learn a morphism from a known $p_{\text{init}}$ into $p_{\text{data}}$.
+       - Sample from $p_{\text{init}}$.
+       - Morph the sample.
+- The framework that describes the second option: transport problem.
 
 #### Notes
 - Regardless of the modality, we think of the data as $d$-dimensional vectors.
 - We assume that there's an underlying random variable $Z$ with distribution $p_{\text{data}}$ where these samples are generated from.
-- Options & transport - call out plainly from the slides
+- Options: call out the first one. Mention that autoregressive models and normalising flow models fall under this category.
+- Second option: read out literally.
 
 ### Slide 4: What is the unifying framework?
-- The Goal: Learn a map $T$ that morphs starting distribution $p_{\text{init}}$ to target $p_{\text{data}}$.
+#### Content: Measuring the Morphing (Minimal OT)
+- The Goal: Learn a map $T$ that morphs some distribution $p$ to target $q$.
+
   $$
-  T_\sharp p_\text{init}=p_\text{data}
+  T_\sharp p=q
   $$
-- Optimal Transport: What is the minimum physical effort required to reshape $p_{\text{init}}$ into $p_{\text{data}}$?
-- Wasserstein Distance: The mathematical formalization of this minimum effort.
+
+- Optimal Transport: For some cost function $c:\mathbb{R}^d\times\mathbb{R}^d\to\mathbb{R}_{\geq 0}$
+
+  $$
+  \inf_T\mathbb{E}_{x\sim\mu}[c(x, T(x)]
+  $$
+
+- Example:
+  - Wasserstein Distance: $c(x, T(x))=(||x-T(x)||_p)^{1/p}$
+  - What is the minimum physical effort required to reshape $p$ into $q$.
+  - Insert image on the side of stuff moving (source internet)
+
+#### Notes
+- TODO
+
+### Slide 5: The Dual Formulation & WGANs
+- 
 
 ----
 ## Mathematical foundation

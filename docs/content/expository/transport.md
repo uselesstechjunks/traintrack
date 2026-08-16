@@ -69,7 +69,7 @@ What am I trying to achieve?
   $$
 
 - Example:
-  - Wasserstein Distance: $c(x, T(x))=(||x-T(x)||_p)^{1/p}$
+  - Wasserstein Distance: $c(x, T(x))=(\parallel x-T(x)\parallel_p)^{1/p}$
   - What is the minimum physical effort required to reshape $p$ into $q$.
   - Insert image on the side of stuff moving (source internet)
 
